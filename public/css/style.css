@@ -1,0 +1,290 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+}
+
+#main {
+  clear: both;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -64px;
+}
+#main #pad {
+  height: 64px;
+}
+
+#foot {
+  clear: both;
+  position: relative;
+  height: 64px;
+}
+
+h1 {
+  line-height: 40px;
+  font-size: 32pt;
+  font-family: serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+body {
+  font: 18px serif;
+  background: repeating-linear-gradient(transparent, transparent 50px, rgba(0, 0, 0, 0.4) 50px, rgba(0, 0, 0, 0.4) 53px, transparent 53px, transparent 63px, rgba(0, 0, 0, 0.4) 63px, rgba(0, 0, 0, 0.4) 66px, transparent 66px, transparent 116px, rgba(0, 0, 0, 0.5) 116px, rgba(0, 0, 0, 0.5) 166px, rgba(255, 255, 255, 0.2) 166px, rgba(255, 255, 255, 0.2) 169px, rgba(0, 0, 0, 0.5) 169px, rgba(0, 0, 0, 0.5) 179px, rgba(255, 255, 255, 0.2) 179px, rgba(255, 255, 255, 0.2) 182px, rgba(0, 0, 0, 0.5) 182px, rgba(0, 0, 0, 0.5) 232px, transparent 232px), repeating-linear-gradient(270deg, transparent, transparent 50px, rgba(0, 0, 0, 0.4) 50px, rgba(0, 0, 0, 0.4) 53px, transparent 53px, transparent 63px, rgba(0, 0, 0, 0.4) 63px, rgba(0, 0, 0, 0.4) 66px, transparent 66px, transparent 116px, rgba(0, 0, 0, 0.5) 116px, rgba(0, 0, 0, 0.5) 166px, rgba(255, 255, 255, 0.2) 166px, rgba(255, 255, 255, 0.2) 169px, rgba(0, 0, 0, 0.5) 169px, rgba(0, 0, 0, 0.5) 179px, rgba(255, 255, 255, 0.2) 179px, rgba(255, 255, 255, 0.2) 182px, rgba(0, 0, 0, 0.5) 182px, rgba(0, 0, 0, 0.5) 232px, transparent 232px), repeating-linear-gradient(125deg, transparent, transparent 2px, rgba(0, 0, 0, 0.2) 2px, rgba(0, 0, 0, 0.2) 3px, transparent 3px, transparent 5px, rgba(0, 0, 0, 0.2) 5px), #d2d22d;
+  overflow-y: scroll;
+}
+
+#main {
+  width: 936px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (min-width: 321px) and (max-width: 985px) {
+  #main {
+    width: 600px;
+  }
+}
+
+#head {
+  background: white;
+  height: 40px;
+  margin-bottom: 32px;
+  padding: 4px;
+  -webkit-box-shadow: 10px 10px black;
+  -moz-box-shadow: 10px 10px black;
+  box-shadow: 10px 10px black;
+}
+
+#body {
+  width: 600px;
+  background: white;
+  -webkit-box-shadow: 10px 10px black;
+  -moz-box-shadow: 10px 10px black;
+  box-shadow: 10px 10px black;
+}
+
+#side {
+  float: right;
+  width: 304px;
+  min-height: 200px;
+  margin-left: 32px;
+  background: white;
+  -webkit-box-shadow: 10px 10px black;
+  -moz-box-shadow: 10px 10px black;
+  box-shadow: 10px 10px black;
+}
+@media only screen and (min-width: 321px) and (max-width: 985px) {
+  #side {
+    display: none;
+  }
+}
+@media only screen and (max-width: 320px) {
+  #side {
+    display: none;
+  }
+}
+
+#foot {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 936px;
+  height: 48px;
+  margin: auto;
+  background: white;
+  -webkit-box-shadow: 10px 10px black;
+  -moz-box-shadow: 10px 10px black;
+  box-shadow: 10px 10px black;
+}
+@media only screen and (min-width: 321px) and (max-width: 985px) {
+  #foot {
+    width: 600px;
+  }
+}
+
+#sub_head {
+  box-sizing: border-box;
+  position: relative;
+  margin: -16px -16px 0px -16px;
+  padding: 32px 16px 0px 16px;
+  height: 128px;
+  background: repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(60deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px), -webkit-linear-gradient(60deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1)), -webkit-linear-gradient(120deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1));
+  background: repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(60deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px), -moz-linear-gradient(60deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1)), -moz-linear-gradient(120deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1));
+  background: repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(60deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px), -o-linear-gradient(60deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1)), -o-linear-gradient(120deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1));
+  background: repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(60deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 60px), linear-gradient(60deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1)), linear-gradient(120deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.1) 75%, rgba(0, 0, 0, 0.1));
+  -webkit-background-size: 70px 120px;
+  -moz-background-size: 70px 120px;
+  -o-background-size: 70px 120px;
+  background-size: 70px 120px;
+  background-color: #6d695c;
+}
+
+#rule {
+  display: none;
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 602px;
+  border: 1px solid black;
+}
+
+form {
+  padding: 16px;
+}
+form label {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 24px;
+  min-width: 100px;
+  margin: 8px 0px 0px 0px;
+  padding: 0 4px;
+  font-family: sans-serif;
+  border: 1px solid black;
+  border-right: 0px;
+  vertical-align: middle;
+}
+form input {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 24px;
+  margin: 8px 0px 0px 0px;
+  padding: 0 4px;
+  border: 1px solid black;
+  vertical-align: middle;
+}
+form input[type="file"] {
+  display: none;
+}
+form input[name="tag"] {
+  width: 48px;
+  margin-right: 4px;
+}
+form input[name="title"] {
+  width: 513px;
+}
+form input[name="title"].shorter {
+  width: 477px;
+}
+form input[name="author"] {
+  width: 566px;
+}
+form textarea {
+  box-sizing: border-box;
+  width: 566px;
+  height: 100px;
+  margin: 16px 16px 0px 0px;
+}
+form input[name="url"] {
+  width: 566px;
+}
+form input[name="start"] {
+  margin-right: 46px;
+}
+form hr {
+  box-sizing: border-box;
+  margin: 16px 2px 0px 0px;
+  border: 0px solid black;
+  border-bottom: 1px solid black;
+}
+form input[type="submit"], form input[type="reset"] {
+  width: 276px;
+  margin-bottom: 8px;
+  -webkit-box-shadow: 2px 2px 0px black;
+  -moz-box-shadow: 2px 2px 0px black;
+  box-shadow: 2px 2px 0px black;
+}
+form hr + input[type="submit"] {
+  margin-right: 14px;
+}
+form .icon {
+  display: inline-block;
+  position: relative;
+  vertical-align: bottom;
+  cursor: pointer;
+}
+form .icon img {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  padding: 3px;
+  margin-right: 8px;
+  border: 1px solid black;
+  background: white;
+  vertical-align: bottom;
+}
+form .icon:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  right: 2px;
+  height: 11px;
+  width: 11px;
+  padding: 0;
+  background: url("/img/edit.png") no-repeat center center, white;
+  border: 1px solid black;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 1px 1px 0px black;
+  -moz-box-shadow: 1px 1px 0px black;
+  box-shadow: 1px 1px 0px black;
+}

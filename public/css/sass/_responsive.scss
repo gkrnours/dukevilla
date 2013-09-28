@@ -1,0 +1,15 @@
+$break-small: 320px !default;
+$break-large: 1024px !default;
+
+@mixin respond-to($size){
+	@if $size == small {
+		@media only screen and (max-width: $break-small){ @content; }
+	}
+	@else if $size == medium {
+		@media only screen and (min-width: $break-small + 1) 
+		                   and (max-width: $break-large - 1){ @content; }
+	}
+	@else if $size == large {
+		@media only screen and (min-width: $break-large){ @content; }
+	}
+}

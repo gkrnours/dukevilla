@@ -1,0 +1,15 @@
+$break-large: 986px;
+
+@import "compass/reset.scss";
+@import "compass/layout.scss";
+@import "compass/css3/box-sizing";
+@import "compass/css3/box-shadow";
+@import "compass/css3/border-radius";
+@import "compass/css3/background-size";
+@import "compass/css3/background-origin";
+
+@import "responsive";
+
+// Sticky
+@include sticky-footer(64px, "#main", "#pad", "#foot");
+// end sticky

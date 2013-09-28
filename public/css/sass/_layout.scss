@@ -1,0 +1,61 @@
+$t: transparent;
+$b2: rgba(0,0,0,.2);
+$b4: rgba(0,0,0,.4);
+$b5: rgba(0,0,0,.5);
+$w2: rgba(255,255,255,.2);
+
+body {
+  font: 18px serif;
+	@include background(
+    repeating-linear-gradient($t, 
+		  $t   50px, $b4  50px, $b4  53px, $t   53px, $t   63px, $b4  63px,
+		 	$b4  66px, $t   66px,	$t  116px, $b5 116px, $b5 166px, $w2 166px,
+			$w2 169px, $b5 169px, $b5 179px, $w2 179px,	$w2 182px, $b5 182px,
+			$b5 232px, $t  232px),
+    repeating-linear-gradient(270deg, $t,
+			$t   50px, $b4  50px, $b4  53px, $t   53px, $t   63px, $b4  63px,
+			$b4  66px, $t   66px, $t  116px, $b5 116px, $b5 166px, $w2 166px,
+			$w2 169px, $b5 169px, $b5 179px, $w2 179px, $w2 182px, $b5 182px,
+			$b5 232px, $t  232px),
+    repeating-linear-gradient(125deg, $t,
+			$t 2px, $b2 2px, $b2 3px, $t 3px, $t 5px, $b2 5px),
+			hsl(60, 65%, 50%)
+	);
+	overflow-y: scroll;
+}
+
+#main{
+	width: 936px;
+	@include respond-to(medium){
+		width: 600px;
+	}
+	margin-left: auto; margin-right: auto;
+}
+#head{
+	background: white;
+	height: 40px;
+	margin-bottom: 32px; padding: 4px;
+	@include box-shadow(10px 10px black);
+}
+#body{
+	width: 600px;
+	background: white;
+	@include box-shadow(10px 10px black);
+}
+#side{
+	float: right;
+	width: 304px;	min-height: 200px;
+	margin-left: 32px;
+	@include respond-to(medium){ display: none; }
+	@include respond-to(small){  display: none; }
+	background: white;
+	@include box-shadow(10px 10px black);
+}
+#foot{
+	@include box-sizing(border-box);
+	width: 936px; height: 48px;
+	@include respond-to(medium){ width: 600px; }
+	margin: auto;
+	background: white;
+	@include box-shadow(10px 10px black);
+}

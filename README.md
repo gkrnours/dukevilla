@@ -1,4 +1,4 @@
 agenda-social
 =============
 
-agedna-social, the webapp
+agena-social, the webapp

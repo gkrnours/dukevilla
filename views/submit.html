@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block head %}
+	<script src="/js/prototype.js"></script>
+	<script src="/js/form/submit.js"></script>
+{% endblock %}
+
+{% block content %}
+{% include "form/submit.html" only %}
+{% endblock %}

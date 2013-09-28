@@ -1,0 +1,94 @@
+#sub_head{
+	box-sizing: border-box;
+	position: relative;
+	margin: -16px -16px 0px -16px; padding: 32px 16px 0px 16px;
+	height: 128px;
+	@include background(
+		repeating-linear-gradient(120deg, rgba(white,.1), rgba(white,.1) 1px,
+	                                  	transparent 1px, transparent 60px),
+		repeating-linear-gradient( 60deg, rgba(white,.1), rgba(white,.1) 1px,
+	                                  	transparent 1px, transparent 60px),
+		linear-gradient(60deg, rgba(black,.1) 25%, transparent 25%,
+													transparent 75%, rgba(black,.1) 75%, rgba(black,.1)),
+		linear-gradient(120deg, rgba(black,.1) 25%, transparent 25%,
+													transparent 75%, rgba(black,.1) 75%, rgba(black,.1))
+	);
+	@include background-size(70px 120px);
+	background-color: #6d695c;
+}
+#rule{
+	display: none;
+	position: absolute;
+		top: 10px; bottom: 10px; left: 602px;
+		border: 1px solid black;
+}
+form{
+	padding: 16px;
+	label{
+		display: inline-block; box-sizing: border-box;
+		height: 24px; min-width: 100px;
+		margin: 8px 0px 0px 0px; padding: 0 4px;
+		font-family: sans-serif;
+		border: 1px solid black; border-right: 0px;
+		vertical-align: middle;
+	}
+	input{
+		display: inline-block; box-sizing: border-box;
+		height: 24px;
+		margin: 8px 0px 0px 0px; padding: 0 4px;
+		border: 1px solid black;
+		vertical-align: middle;
+	}
+	input[type="file"]{ display: none; }
+	input[name="tag"]{ width: 48px; margin-right: 4px; }
+	input[name="title"]{ width: 513px; 
+		&.shorter{ width: 477px; }
+	}
+	input[name="author"]{ width: 566px; }
+	textarea{
+		box-sizing: border-box;
+		width: 566px; height: 100px;
+		margin: 16px 16px 0px 0px;
+	}
+	input[name="url"]{ width: 566px; }
+	input[name="start"]{ margin-right: 46px; }
+	hr{
+		box-sizing: border-box;
+		margin: 16px 2px 0px 0px;
+		border: 0px solid black;
+		border-bottom: 1px solid black;
+	}
+	input[type="submit"], input[type="reset"]{
+		width: 276px;
+		margin-bottom: 8px;
+		@include box-shadow(2px 2px 0px black);
+	}
+	hr + input[type="submit"]{
+		margin-right: 14px;
+	}
+	.icon{
+		display: inline-block;
+		position: relative;
+		vertical-align: bottom;
+		cursor: pointer;
+		img{
+			display: inline-block;
+			width: 16px; height: 16px;
+			padding: 3px; margin-right: 8px;
+			border: 1px solid black;
+			background: white;
+			vertical-align: bottom;
+		}
+		&:hover::after{
+			content: "";
+			position: absolute;
+				bottom: -6px; right: 2px;
+			height: 11px; width: 11px;
+			padding: 0;
+			background: url("/img/edit.png") no-repeat center center, white;
+			border: 1px solid black;
+			@include border-radius(3px);
+			@include box-shadow(1px 1px 0px black);
+		}
+	}
+}
