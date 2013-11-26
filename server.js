@@ -17,7 +17,8 @@ app.set('views', __dirname + '/views')
 app.set('view engine', 'html')
 app.set('view cache', false)
 swig.setDefaults({cache: false})
-app.set('port', process.env.PORT || 8080)
+app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8080)
+app.set('host', process.env.OPENSHIFT_NODEJS_IP || null)
 app.use(express.favicon())
 app.use(express.logger('dev'))
 app.use(express.bodyParser())
@@ -36,6 +37,6 @@ routes.setup(app)
 //app.get('/', routes.index);
 
 
-http.createServer(app).listen(app.get('port'), function(){
+http.createServer(app).listen(app.get('port'), app.get('host'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
