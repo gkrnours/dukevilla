@@ -1,6 +1,16 @@
-{% extends "layout.html" %}
+{# / #}
+{% extends "template.html" %}
 
-{% block content %}
-	<h1>{{title}}</h1>
-	<p>hello world.</p>
-{% endblock %}
+{% block head %}
+<meta http-equiv="refresh" content="600" />
+{% endblock head%}
+
+{% block conn %}
+<div class="part list">
+    foobar
+    {#	{% include "list_msg.html" %}#}
+</div>	
+
+<div class="part">
+</div>
+{% endblock conn %}

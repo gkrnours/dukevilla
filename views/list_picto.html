@@ -1,0 +1,10 @@
+<fieldset id="list" class="list">
+    <legend>Picto</legend>
+    <ul> 
+        {% for stat in stats %}
+        <li class="entry">
+        <a href="/rank/{{stat.id}}"><img src="{{stat.icon}}">
+                {{stat.name}}</a>
+        {% endfor %}
+    </ul>
+</fieldset>

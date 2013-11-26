@@ -4,11 +4,10 @@
  */
 
 var express = require('express');
-var swig = require('swig');
-var http = require('http');
-var path = require('path');
-var routes = require('./routes');
-var user = require('./routes/user');
+var swig    = require('swig');
+var http    = require('http');
+var path    = require('path');
+var routes  = require('./routes/index.js');
 
 var app = express();
 
@@ -33,9 +32,8 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
-app.get('/submit', routes.submit);
-app.get('/users', user.list);
+routes.setup(app)
+//app.get('/', routes.index);
 
 
 http.createServer(app).listen(app.get('port'), function(){

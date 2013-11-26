@@ -1,11 +1,12 @@
+var fs = require('fs')
+var modules = fs.readdirSync(__dirname).map(function(i){ 
+	return require("./"+i)
+})
 
-/*
- * GET home page.
- */
 
-exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
-};
-exports.submit = function(req, res){
-  res.render('submit', { title: 'Express' });
-};
+this.setup = function setup(app){
+	modules.forEach(function(i){ i.handle(app) })
+}
+this.handle = function(app){
+	app.get('/', function(req, res){ res.render('index', {}) })
+}

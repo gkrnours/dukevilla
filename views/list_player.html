@@ -1,0 +1,9 @@
+<fieldset id="list" class="list">
+    <legend>Classement</legend>
+    <dl> 
+        {% for p in rank %}
+        <dt class="entry">{{p.score}}</dt>
+        <dd>{{p.name}}</dd>
+        {% endfor %}
+    </dl>
+</fieldset>

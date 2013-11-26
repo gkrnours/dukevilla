@@ -1,0 +1,16 @@
+{# / #}
+{% extends "template.html" %}
+
+{% block head %}
+<meta http-equiv="refresh" content="60" />
+{% endblock head%}
+
+{% block conn %}
+<div class="part">
+    {% include "list_picto.html" %}
+</div>	
+
+<div class="part">
+    {% include "list_player.html" %}
+</div>
+{% endblock conn %}

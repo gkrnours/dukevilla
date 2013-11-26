@@ -1,4 +1,2 @@
-agenda-social
-=============
-
-agena-social, the webapp
+La Villa de Duke
+================
