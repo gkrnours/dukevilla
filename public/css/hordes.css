@@ -229,6 +229,10 @@ cite {
   border-color: #efd78e;
   background: #421418;
 }
+#main ul li a.select {
+  border-color: #afacc1;
+  background-color: #696486;
+}
 #main dl {
   display: block;
   margin: 10px;

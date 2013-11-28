@@ -14,6 +14,10 @@
                     border-color: $light;
                     background: $darker;
                 }
+                &.select {
+                    border-color: #afacc1;
+                    background-color: #696486;
+                }
             }
         }
     }
