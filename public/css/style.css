@@ -86,77 +86,49 @@ a {
 }
 
 body {
-  font: 18px serif;
-  background: repeating-linear-gradient(transparent, transparent 50px, rgba(0, 0, 0, 0.4) 50px, rgba(0, 0, 0, 0.4) 53px, transparent 53px, transparent 63px, rgba(0, 0, 0, 0.4) 63px, rgba(0, 0, 0, 0.4) 66px, transparent 66px, transparent 116px, rgba(0, 0, 0, 0.5) 116px, rgba(0, 0, 0, 0.5) 166px, rgba(255, 255, 255, 0.2) 166px, rgba(255, 255, 255, 0.2) 169px, rgba(0, 0, 0, 0.5) 169px, rgba(0, 0, 0, 0.5) 179px, rgba(255, 255, 255, 0.2) 179px, rgba(255, 255, 255, 0.2) 182px, rgba(0, 0, 0, 0.5) 182px, rgba(0, 0, 0, 0.5) 232px, transparent 232px), repeating-linear-gradient(270deg, transparent, transparent 50px, rgba(0, 0, 0, 0.4) 50px, rgba(0, 0, 0, 0.4) 53px, transparent 53px, transparent 63px, rgba(0, 0, 0, 0.4) 63px, rgba(0, 0, 0, 0.4) 66px, transparent 66px, transparent 116px, rgba(0, 0, 0, 0.5) 116px, rgba(0, 0, 0, 0.5) 166px, rgba(255, 255, 255, 0.2) 166px, rgba(255, 255, 255, 0.2) 169px, rgba(0, 0, 0, 0.5) 169px, rgba(0, 0, 0, 0.5) 179px, rgba(255, 255, 255, 0.2) 179px, rgba(255, 255, 255, 0.2) 182px, rgba(0, 0, 0, 0.5) 182px, rgba(0, 0, 0, 0.5) 232px, transparent 232px), repeating-linear-gradient(125deg, transparent, transparent 2px, rgba(0, 0, 0, 0.2) 2px, rgba(0, 0, 0, 0.2) 3px, transparent 3px, transparent 5px, rgba(0, 0, 0, 0.2) 5px), #d2d22d;
+  margin: 0px;
+  padding: 0 20px;
+  font: 14px sans-serif;
+  color: #efd78e;
   overflow-y: scroll;
-}
-
-#main {
-  width: 936px;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media only screen and (min-width: 321px) and (max-width: 985px) {
-  #main {
-    width: 600px;
-  }
-}
-
-#head {
-  background: white;
-  height: 40px;
-  margin-bottom: 32px;
-  padding: 4px;
-  -webkit-box-shadow: 10px 10px black;
-  -moz-box-shadow: 10px 10px black;
-  box-shadow: 10px 10px black;
+  background: #421418 url("/img/bg.gif") center repeat-y;
 }
 
 #body {
-  width: 600px;
-  background: white;
-  -webkit-box-shadow: 10px 10px black;
-  -moz-box-shadow: 10px 10px black;
-  box-shadow: 10px 10px black;
-}
-
-#side {
-  float: right;
-  width: 304px;
-  min-height: 200px;
-  margin-left: 32px;
-  background: white;
-  -webkit-box-shadow: 10px 10px black;
-  -moz-box-shadow: 10px 10px black;
-  box-shadow: 10px 10px black;
+  position: relative;
+  width: 950px;
+  margin: 0 auto;
 }
 @media only screen and (min-width: 321px) and (max-width: 985px) {
-  #side {
-    display: none;
-  }
-}
-@media only screen and (max-width: 320px) {
-  #side {
-    display: none;
-  }
-}
-
-#foot {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 936px;
-  height: 48px;
-  margin: auto;
-  background: white;
-  -webkit-box-shadow: 10px 10px black;
-  -moz-box-shadow: 10px 10px black;
-  box-shadow: 10px 10px black;
-}
-@media only screen and (min-width: 321px) and (max-width: 985px) {
-  #foot {
+  #body {
     width: 600px;
   }
+}
+
+#bann {
+  display: block;
+  height: 100px;
+}
+
+#local {
+  position: absolute;
+  top: 10px;
+  left: 530px;
+  width: 140px;
+  list-style: none;
+}
+
+#alrt {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 180px;
+  height: 55px;
+  margin: 0px;
+  padding: 10px;
+  background: url("/img/postit.gif");
+  color: #513c2d;
+  font-weight: bold;
 }
 
 #sub_head {

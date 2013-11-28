@@ -1,0 +1,28 @@
+#menu {
+    li {
+        float: left;
+        margin: 0; padding: 0;
+        text-align: center;
+        list-style: none;
+    }
+    .item {
+        margin: 11px 8px; padding: 0 7px;
+        background: #5c2b20;
+        border-radius: 5px;
+        &:hover {
+            background: #3c1b10;
+        }
+        a {
+            text-decoration: none;
+            text-transform: small-caps;
+            font-weight: bold;
+            &.name {
+                text-transform: none;
+            }
+        }
+        img {
+            margin: 0; padding: 0;
+            height: 16px;
+        }
+    }
+}

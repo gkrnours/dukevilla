@@ -1,0 +1,24 @@
+a:link, a:visited, a:hover, a:active {
+    color: $light;
+}
+
+img {
+    border: none;
+}
+
+hr {
+    width: 50%;
+    color: $light;
+}
+
+p {
+    text-align: justify;
+    text-indent: 1em;
+}
+
+cite {
+    display: block;
+    margin: 7px 15px 0px 7px; padding-left: 7px;
+    border-left: 1px dashed $lightes;
+    color: $lightes;
+}

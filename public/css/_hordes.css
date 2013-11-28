@@ -1,0 +1,276 @@
+/* generic */
+body {
+    font: 14px sans-serif;
+	color: #efd78e;
+	padding: 0 20px;
+	margin: 0px;
+	overflow-x: auto;
+	overflow-y: scroll;
+	background:#421418 url('/img/bg.gif') center repeat-y;
+}
+#bann{display: block; height: 100px; }
+#body{margin:0px auto;width:950px;position:relative;}
+#debug{position: fixed; left: 0px;list-style: none; padding: 0px; }
+#debug *{color: black !important; background: white; margin: 5px;}
+
+a:link, a:visited, a:hover, a:active {color:#efd78e;}
+img			{border: none;}
+hr			{color:#efd78e;width: 50%;}
+form		{display: inline;}
+p			{text-align: justify; text-indent: 1em;}
+cite		{
+	border-left: 1px dashed #DDAB76;color: #DDAB76;display: block;
+	margin: 7px 15px 0px 7px; padding-left: 7px;
+}
+textarea{
+	background: url('/img/form_textarea.gif') no-repeat;
+	height: 220px; width: 410px;
+	border: none;
+/*	overflow: hidden; */
+	padding: 10px 5px;}
+input[type="text"]   {
+	background: url('/img/form_field.gif') 0 -8px;
+	border: 1px solid #efdba8;
+	outline: 1px solid #5c2b20;
+	display: inline-block;
+	width:415px;
+	padding: 1px 3px;
+}
+input[type="submit"]{
+	background:url('/img/button.gif');
+	cursor:pointer;
+	border:1px black solid;
+	color: #f0d79e;
+	font-weight: bold;
+	font-variant: small-caps;
+	text-decoration: none;
+	width:100%;
+}
+select{
+	background-color: #965c36;
+	border: 1px solid #ddab76;
+	color: #f0d79e;
+	cursor: pointer;
+	outline: 1px solid black;
+	margin: 2px auto;
+}
+select:focus {
+	background-color: #b37c4a;
+	color: white;
+	border: white;
+}
+option {
+	background-color: #965c36;
+	color: #f0d79e;
+}
+option[selected="selcted"] {
+	background-color: #696486;
+	color: white;
+	font-weight: bold;
+}
+fieldset {
+	background-color: #572618;
+	border: 2px #efd78e inset;
+	border-radius:   	10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-khtml-border-radius:  10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+}
+legend		{
+	border:none;
+	color: black;
+	font-variant: small-caps;
+	text-transform: lowercase;
+	width: 212px;
+	text-align: center;
+	margin-left: 21%;
+	background:url('/img/header.png') center no-repeat; 
+}
+dl{display: block; margin: 1em 0 0 .3em;}
+dl dt, dl dd{border-bottom: 1px solid #b37c4a;color: #e3c699; margin-bottom: 1px;}
+dl dd{
+    display:block;
+    height: 17px; width:300px;
+    padding-left: 5px;
+    background-color: #996739;
+    overflow: hidden;
+}
+dl dt{
+	width: 80px;
+    padding-left: 25px;
+	background-color: #b37c4a; 
+	border-radius:         10px 0px 0px 2px;
+	-moz-border-radius:    10px 0px 0px 2px;
+	-khtml-border-radius:  10px 0px 0px 2px;
+	-webkit-border-radius: 10px 0px 0px 2px;
+	clear: both;
+	color: white;
+	display: block;
+	float: left;
+	font-weight: bold;
+	position: relative;
+	height: 17px;
+	overflow: hidden;
+}
+
+.avatar{width:90px;height:30px;}
+.info{height:32px;background-color:#965C36;border: 1px solid #B37C4A; border-left:none; border-right:none;}
+.right{float:right;}
+
+.info p{margin: 0px;text-align: right;}
+.info img{outline: 1px solid #5C2B20; border: 1px solid #DDAB76;}
+
+/* alrt */
+
+#local{
+	position:absolute;
+		top:	10px;
+		left:  530px;
+	width: 140px;
+	list-style: none;
+}
+
+#alrt {
+	position:absolute;
+		top:	10px;
+		right:	10px;
+	width: 180px;
+	height: 55px;
+	background: url('/img/postit.gif');
+	color: #513C2D;
+	font-weight: bold;
+	margin: 0px;
+	padding: 10px;
+}
+
+/* menu */
+
+#menu {
+	margin: 0px;
+	width: 100%;
+	height: 60px;
+   	background: url("/img/menu_bg.gif") repeat-x 0 7px;
+	padding-start: 0px;
+	-moz-padding-start: 0px;
+	-khtml-padding-start: 0px;
+	-webkit-padding-start: 0px;}
+#menu li { 
+	list-style: none;
+	float: left;
+	margin: 0 0px;
+	padding: 0px;
+	text-align: center;
+}
+#menu .item {
+	padding: 0 7px;
+	margin: 11px 8px ;
+	background: #5c2b20;
+	border-radius: 10px 10px 5px 5px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-khtml-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+}
+#menu li.item:hover {
+	background: #3c1b10;
+}
+#menu .item a{
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+#menu .item a.name{text-transform: none;}
+#menu .item img{padding: 0;margin: 0;height: 16px;}
+
+/* main */
+
+#main		{clear:both;padding-top: 20px;}
+#main .part {float: left; width: 450px; margin-left: 20px; margin-bottom: 20px;}
+
+/* list */ 
+#main .list ul  {margin:5px -5px;padding: 0px 15px;}
+#main .list a	{margin-left: 5px;display: block;}
+#main .list li  {margin: 2px 0px; list-style-type: none;}
+#main .list em  {display: inline-block; font: bold 12px serif; }
+
+#main .list input {width: auto;}
+#main .list .ok {display: inline-block;width:25px;}
+#main .entry form {float:right;padding: 1px 2px;margin: 0px;}
+#main .entry, #main .add{clear: right;}
+#main #rep_add{ margin-left: 15px; }
+
+/* msg */
+#main .msg h2{
+	font: bold 14px serif;
+	text-align: left;
+	text-indent: 15%;
+}
+#main .msg h3{
+	font: 14px serif;
+	padding-right: 10%;
+	text-align: right;
+}
+#main .small{
+	width: 49%;
+}
+
+/* set */
+#main .sselect{display: inline-block;width:423px;}
+#main .setText{display: inline-block;width:385px;}
+#main .setTick{display: inline-block;width: 25px;}
+#main .setCat{ display: inline-block;width:170px;}
+
+#main .fake-submit{
+	background:url('/img/button.gif');
+	cursor:pointer;
+	border:1px black solid;
+	color: #f0d79e;
+	font-weight: bold;
+	font-variant: small-caps;
+	text-decoration: none;
+	text-align: center;
+	width:407px;
+	padding:1px;
+	display: inline-block;
+}
+select{
+	background-color: #965c36;
+	border: 1px solid #ddab76;
+	color: #f0d79e;
+	cursor: pointer;
+}
+
+/* msg */
+#msg cite{
+	border: none;
+	overflow: auto;
+	border-left: 1px dashed black;
+	margin: 0px;
+	padding: 3px 7px;}
+#msg big{
+	color: #FF3300;
+	font-size: 1em;
+}
+#msg strong{
+	color: #AFB3CF;}
+#msg p{
+	word-wrap: break-word;
+	width: 425px;}
+
+/* help */
+#help h2{
+	font: bold 14px serif;
+	text-align: left;
+	text-indent: 15%;
+}
+#help h3{
+	font: 14px serif;
+	padding-right: 10%;
+	text-align: right;
+}
+#help p{
+	text-indent: 20px;
+	margin-bottom: 10px;
+}
+#help a{
+	text-decoration: underline;
+}

@@ -13,64 +13,61 @@
 		<ul id="local">
             <li>Vous etes connecté en tant que {{pseudo|default("invité")}}</li>
 		</ul>
-	{% if e %}
+        {% if e %}
 		<p id="alrt">
-		<img src="/img/h_warning.gif" alt=":!!:" />
-		{{ p }}
+            <img src="/img/h_warning.gif" alt=":!!:" />
+            {{ p }}
 		</p>
-        {#{% else %}
-		<p id="alrt">
-		</p>
-    #}{% endif %}
-	{% block menu %}
-	<div id="menubg">
-	<ul id="menu">
-		<li>
-            <img alt="" src="/img/menu_start.gif" />
-		<li class="item">
-			<img alt="/-\" src="/img/city.gif" />
-			<a href="/" >Accueil</a>
-        <li class="item">
-			<img alt="i" src="/img/human.gif" />
-			<a href="/signin">Connexion</a>
-        <li class="item">
-			<img alt="*" src="/img/star.gif" />
-			<a href="/rank">Classement</a>
+        {% endif %}
+        {% block menu %}
+        <div id="menubg">
+            <ul id="menu">
+                <li>
+                    <img alt="" src="/img/menu_start.gif" />
+                <li class="item">
+                    <img alt="/-\" src="/img/city.gif" />
+                    <a href="/" >Accueil</a>
+                <li class="item">
+                    <img alt="i" src="/img/human.gif" />
+                    <a href="/signin">Connexion</a>
+                <li class="item">
+                    <img alt="*" src="/img/star.gif" />
+                    <a href="/rank">Classement</a>
 
-	</ul>
-	</div>
-	{% endblock menu %}
+            </ul>
+        </div>
+        {% endblock menu %}
 
-	{% block main %}
-	<div id="main">
+        {% block main %}
+        <div id="main">
 
-	{% if pseudo %}
-		{% block conn %}
-		<div class="part">
-		<fieldset> 
-			<legend>Connexion réussie</legend>
-			<p>Vous etes correctement connecté à la messagerie. Cependant, un problème de conception vous fait voir une page qui ne devrait pas vous etre accessible. Toutes nos excuses pour la gène occasionné.</p>
-		</fieldset>
-		</div>
-		{% endblock conn %}
-	{% else %}
-		<div class="part">
-		<fieldset>
-            <legend>Problème de connexion</legend>
-            <p>Un problème de connexion est survenu. Merci de vous reconnecter 
-            via le bouton dans le menu.</p>
-		</fieldset>
-		</div>
-		<div class="part">
-		<fieldset>
-			<legend>Kesako ?</legend>
-            <p></p>
-		</fieldset>
-		</div>
-	{% endif %}
+        {% if pseudo %}
+            {% block conn %}
+            <div class="part">
+                <fieldset> 
+                    <legend>Connexion réussie</legend>
+                    <p>Vous etes correctement connecté à la messagerie. Cependant, un problème de conception vous fait voir une page qui ne devrait pas vous etre accessible. Toutes nos excuses pour la gène occasionné.</p>
+                </fieldset>
+            </div>
+            {% endblock conn %}
+        {% else %}
+            <div class="part">
+                <fieldset>
+                    <legend>Problème de connexion</legend>
+                    <p>Un problème de connexion est survenu. Merci de vous reconnecter 
+                    via le bouton dans le menu.</p>
+                </fieldset>
+            </div>
+            <div class="part">
+                <fieldset>
+                    <legend>Kesako ?</legend>
+                    <p></p>
+                </fieldset>
+            </div>
+        {% endif %}
 
-	</div>
-	{% endblock main %}	
+        </div>
+        {% endblock main %}	
 	</div>
   </body>
 </html>
