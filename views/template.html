@@ -1,8 +1,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
   <head>
-	<title>{% block title %}La Villa de Duke: La résidence secondaire des héros{% endblock %}</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>
+        {% block title %}Duke's Villa, a Home for Heroes.{% endblock %}
+    </title>
 	<link rel="StyleSheet" href="/css/hordes.css"/>
 	{% block head %}{%endblock head%}
 </head>
@@ -10,9 +12,12 @@
 	<div id="body">
 		<a href="/" id="bann">
 		</a>
-		<ul id="local">
-            <li>Vous etes connecté en tant que {{pseudo|default("invité")}}</li>
-		</ul>
+        <!--
+        <ul id="local">
+            <li>{{me.name}}
+            <li>{{me.id}}
+        </ul>
+        -->
         {% if e %}
 		<p id="alrt">
             <img src="/img/h_warning.gif" alt=":!!:" />
@@ -24,50 +29,43 @@
             <ul id="menu">
                 <li>
                     <img alt="" src="/img/menu_start.gif" />
+                    {#
                 <li class="item">
                     <img alt="/-\" src="/img/city.gif" />
                     <a href="/" >Accueil</a>
+                    #}
+                {% if not me %}
                 <li class="item">
                     <img alt="i" src="/img/human.gif" />
-                    <a href="/signin">Connexion</a>
+                    <a href="/login">Login</a>
+                {% else %}
+                <li class="item">
+                    <img alt="i" src="/img/human.gif" />
+                    <a href="/logout">Logout</a>
+                {% endif %}
                 <li class="item">
                     <img alt="*" src="/img/star.gif" />
                     <a href="/rank">Classement</a>
+                {% if me|isAdmin %}
+                <li class="item">
+                    <img alt="A" src="/img/item_desk.gif" />
+                    <a href="/adm">Admin</a>
+                {% endif %}
 
             </ul>
         </div>
         {% endblock menu %}
 
-        {% block main %}
         <div id="main">
+        {% block main %}
 
-        {% if pseudo %}
-            {% block conn %}
-            <div class="part">
-                <fieldset> 
-                    <legend>Connexion réussie</legend>
-                    <p>Vous etes correctement connecté à la messagerie. Cependant, un problème de conception vous fait voir une page qui ne devrait pas vous etre accessible. Toutes nos excuses pour la gène occasionné.</p>
-                </fieldset>
-            </div>
-            {% endblock conn %}
-        {% else %}
             <div class="part">
                 <fieldset>
-                    <legend>Problème de connexion</legend>
-                    <p>Un problème de connexion est survenu. Merci de vous reconnecter 
-                    via le bouton dans le menu.</p>
                 </fieldset>
             </div>
-            <div class="part">
-                <fieldset>
-                    <legend>Kesako ?</legend>
-                    <p></p>
-                </fieldset>
-            </div>
-        {% endif %}
 
+    {% endblock main %}	
         </div>
-        {% endblock main %}	
 	</div>
   </body>
 </html>

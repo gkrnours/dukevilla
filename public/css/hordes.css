@@ -81,7 +81,7 @@ body {
   font: 14px sans-serif;
   color: #efd78e;
   overflow-y: scroll;
-  background: #421418 url("/img/bg.gif") center repeat-y;
+  background: #421414 url("/img/bg.gif") center repeat-y;
 }
 
 #body {
@@ -142,7 +142,8 @@ body {
 #main .part fieldset {
   border: 2px inset #efd78e;
   border-radius: 10px;
-  background-color: #572618;
+  background-color: #572620;
+  padding-bottom: 10px;
 }
 #main .part fieldset legend {
   width: 212px;
@@ -168,7 +169,7 @@ hr {
 
 p {
   text-align: justify;
-  text-indent: 1em;
+  padding: 0 10px 5px;
 }
 
 cite {
@@ -177,6 +178,29 @@ cite {
   padding-left: 7px;
   border-left: 1px dashed #ddab76;
   color: #ddab76;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 5px 10px 0;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.picto {
+  padding: 8px;
+  vertical-align: middle;
+  background: url(/img/rewardBg_trash.gif);
+}
+.picto.rare {
+  background: url(/img/rewardBg_rare.gif);
 }
 
 #menu li {
@@ -227,7 +251,7 @@ cite {
 }
 #main ul li a:hover {
   border-color: #efd78e;
-  background: #421418;
+  background: #421414;
 }
 #main ul li a.select {
   border-color: #afacc1;

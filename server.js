@@ -8,6 +8,7 @@ var swig    = require('swig');
 var http    = require('http');
 var path    = require('path');
 var routes  = require('./routes/index.js');
+var filter  = require('./views/filter.js');
 
 var app = express();
 
@@ -17,12 +18,13 @@ app.set('views', __dirname + '/views')
 app.set('view engine', 'html')
 app.set('view cache', false)
 swig.setDefaults({cache: false})
+filter.extend(swig)
 app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8080)
 app.set('host', process.env.OPENSHIFT_NODEJS_IP || null)
 app.use(express.favicon())
 app.use(express.logger('dev'))
-app.use(express.bodyParser())
-app.use(express.methodOverride())
+app.use(express.json())
+app.use(express.urlencoded())
 app.use(express.cookieParser('langsoc is watching'))
 app.use(express.session())
 app.use(app.router)

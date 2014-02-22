@@ -32,8 +32,6 @@ this.read = function read(id, cb){
     })
 }
 this.write = function write(what, cb){
-    console.log("rank.write = ")
-    console.log(what)
 	// batch processing
 	if(util.isArray(what)) return async.concat(what, self.write, cb)
 	// error management

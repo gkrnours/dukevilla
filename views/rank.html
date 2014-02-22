@@ -2,15 +2,23 @@
 {% extends "template.html" %}
 
 {% block head %}
-<meta http-equiv="refresh" content="60" />
+<!--<meta http-equiv="refresh" content="60" />-->
 {% endblock head%}
 
-{% block conn %}
+{% block main %}
 <div class="part">
     {% include "list_picto.html" %}
 </div>	
 
 <div class="part">
-    {% include "list_player.html" %}
+    {% if stat %}
+    <fieldset id="list" class="list">
+        <legend>Classement</legend>
+        <h3>{{stat|toPicto}} {{stat.name}}</h3>
+        {% if stat.social == true %}<h4>[social]</h4>{% endif %}
+        <p>{{stat.description}}</p>
+        {% include "list_player.html" %}
+    </fieldset>
+    {% endif %}
 </div>
-{% endblock conn %}
+{% endblock main %}

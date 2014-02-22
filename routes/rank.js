@@ -10,7 +10,7 @@ function rank(req, res){
     db_stat.read(null, function(err, lstat){
         db_rank.read(req.params.stat, function(err, lrank){
             res.render('rank', { 
-                stats: lstat, rank: lrank, 
+                stats: lstat, rank: lrank, stat: lstat[req.params.stat],
                 pseudo: " ", select: req.params.stat
             })
         })

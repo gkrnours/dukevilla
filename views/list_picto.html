@@ -2,10 +2,10 @@
     <legend>Picto</legend>
     <ul> 
         {% for stat in stats %}
-        <li class="entry">
+        <li class="entry"> 
         <a href="/rank/{{stat.id}}" 
             {% if stat.id == select %}class="select"{% endif %}>
-            <img src="{{stat.icon}}"> {{stat.name}}</a>
+            {{stat|toPicto}} {{stat.name}}</a>
         {% endfor %}
     </ul>
 </fieldset>

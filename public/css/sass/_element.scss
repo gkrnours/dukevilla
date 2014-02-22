@@ -13,7 +13,8 @@ hr {
 
 p {
     text-align: justify;
-    text-indent: 1em;
+    padding: 0 10px 5px;
+    //text-indent: 1em;
 }
 
 cite {
@@ -21,4 +22,25 @@ cite {
     margin: 7px 15px 0px 7px; padding-left: 7px;
     border-left: 1px dashed $lightes;
     color: $lightes;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 5px 10px 0;
+}
+h3{
+    font-size: 20px;
+    font-weight: 600;
+}
+h2{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.picto{
+    padding: 8px;
+    vertical-align: middle;
+    background: url(/img/rewardBg_trash.gif);
+    &.rare{
+        background: url(/img/rewardBg_rare.gif);
+    }
 }

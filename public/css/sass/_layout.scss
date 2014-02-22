@@ -5,9 +5,9 @@ $b5: rgba(0,0,0,.5);
 $w2: rgba(255,255,255,.2);
 $light: #efd78e;
 $lightes: #DDAB76;
-$darkes: #572618;
+$darkes: #572620;
 $dark: #513C2D;
-$darker: #421418;
+$darker: #421414;
 
 body {
     margin: 0px; padding: 0 20px;
@@ -60,6 +60,7 @@ body {
             border: 2px inset $light;
             border-radius: 10px;
             background-color: $darkes;
+            padding-bottom: 10px;
             legend {
                 width: 212px;
                 border: none;
