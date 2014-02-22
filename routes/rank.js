@@ -3,7 +3,7 @@ var db_stat = require("../db/stat.js")
 
 function list(req, res){
     db_stat.read(null, function(err, lstat){
-        res.render('rank', { stats: lstat, pseudo: " " })
+        res.render('rank', { stats: lstat, pseudo: " ", page: "rank" })
     })
 }
 function rank(req, res){
@@ -11,7 +11,7 @@ function rank(req, res){
         db_rank.read(req.params.stat, function(err, lrank){
             res.render('rank', { 
                 stats: lstat, rank: lrank, stat: lstat[req.params.stat],
-                pseudo: " ", select: req.params.stat
+                pseudo: " ", select: req.params.stat, page: "rank"
             })
         })
     })

@@ -6,15 +6,17 @@
         list-style: none;
     }
     .item {
-        margin: 11px 8px; padding: 0 7px;
-        background: #5c2b20;
+        margin: 5px 0 0 16px; padding: 0 7px;
+        background: $dark;
         border-radius: 5px;
-        &:hover {
-            background: #3c1b10;
+        &:hover, &.select:hover {
+            background: $darker;
+        }
+        &.select {
+            background: $darkes;
         }
         a {
             text-decoration: none;
-            text-transform: small-caps;
             font-weight: bold;
             &.name {
                 text-transform: none;
@@ -23,6 +25,7 @@
         img {
             margin: 0; padding: 0;
             height: 16px;
+            vertical-align: middle;
         }
     }
 }

@@ -11,6 +11,7 @@
 <body>
 	<div id="body">
 		<a href="/" id="bann">
+            <img src="/img/bann.gif" alt="Duke's Villa">
 		</a>
         <!--
         <ul id="local">
@@ -36,20 +37,20 @@
                     #}
                 {% if not me %}
                 <li class="item">
-                    <img alt="i" src="/img/human.gif" />
-                    <a href="/login">Login</a>
+                    <a href="/login">
+                        <img alt="i" src="/img/human.gif" /> Login</a>
                 {% else %}
                 <li class="item">
-                    <img alt="i" src="/img/human.gif" />
-                    <a href="/logout">Logout</a>
+                    <a href="/logout">
+                        <img alt="i" src="/img/human.gif" /> Logout</a>
                 {% endif %}
-                <li class="item">
-                    <img alt="*" src="/img/star.gif" />
-                    <a href="/rank">Ranking</a>
+                <li class="item {{page|select("rank")}}">
+                    <a href="/rank">
+                        <img alt="*" src="/img/star.gif" /> Ranking</a>
                 {% if me|isAdmin %}
-                <li class="item">
-                    <img alt="A" src="/img/item_desk.gif" />
-                    <a href="/adm">Admin</a>
+                <li class="item {{page|select("adm")}}">
+                    <a href="/adm">
+                        <img alt="A" src="/img/item_desk.gif" /> Admin</a>
                 {% endif %}
 
             </ul>
@@ -67,5 +68,9 @@
     {% endblock main %}	
         </div>
 	</div>
+    <div id="foot">Most images and data used on this website are © Motion-Twin.
+        This website is NOT affiliated with Die2Nite.<br>
+        Texts are by courtesy of Amy Emma Aniasham Oldfield McNab.
+    </div>
   </body>
 </html>

@@ -14,7 +14,12 @@ function admin(user){
     return ADMIN.indexOf(user.id) !== -1
 }
 
+function select(page, target){
+    return (page == target)?"select":""
+}
+
 this.extend = function extend(swig){
     swig.setFilter('toPicto', picto)
     swig.setFilter('isAdmin', admin)
+    swig.setFilter('select', select)
 }
