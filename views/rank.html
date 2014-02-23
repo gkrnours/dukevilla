@@ -17,7 +17,7 @@
         <h3>{{stat|toPicto}} {{stat.name}}</h3>
         {% if stat.social == true %}<h4>[social]</h4>{% endif %}
         <p>{{stat.description}}</p>
-        {% include "list_player.html" %}
+        {% include "list_player.html" with list %}
     </fieldset>
     {% endif %}
 </div>

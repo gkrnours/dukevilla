@@ -48,7 +48,6 @@ this.erase = function erase(what, cb){
         async.map(stats, function(stat, done){
             done(null, 'rank:'+stat)
         }, function(err, keys){
-            console.log(keys)
             c.r.del(keys, cb)
         })
     })

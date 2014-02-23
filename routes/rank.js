@@ -6,7 +6,6 @@ function list(req, res){
         var tpl_val = Object.create(req.session)
         tpl_val.stats = lstat
         tpl_val.page  = 'rank'
-        console.log(tpl_val)
         res.render('rank', tpl_val)
     })
 }
@@ -15,10 +14,10 @@ function rank(req, res){
         db_rank.read(req.params.stat, function(err, lrank){
             var tpl_val = Object.create(req.session)
             tpl_val.stats = lstat
-            tpl_val.rank  = lrank
+            tpl_val.list  = lrank
             tpl_val.page  = 'rank'
             tpl_val.stat  = lstat[req.params.stat]
-            tpl_val.select= req.params.stat,
+            tpl_val.select= req.params.stat
             res.render('rank', tpl_val)
         })
     })
