@@ -1,3 +1,5 @@
+var util = require('util')
+
 function picto(stat){
     if(typeof(stat) != 'object') return ""
     if(typeof(stat.icon) == 'undefined') return ""
@@ -18,8 +20,18 @@ function select(page, target){
     return (page == target)?"select":""
 }
 
+function sortStats(stats){
+    if(!util.isArray(stats)) return stats
+    stats.sort(function(a, b){
+        if(a.rare == b.rare) return (a.name < b.name)?-1:1
+        return (a.rare < b.rare)?1:-1
+    })
+    return stats
+}
+
 this.extend = function extend(swig){
     swig.setFilter('toPicto', picto)
     swig.setFilter('isAdmin', admin)
     swig.setFilter('select', select)
+    swig.setFilter('sortStats', sortStats)
 }

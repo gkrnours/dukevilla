@@ -1,7 +1,7 @@
 <fieldset id="list" class="list">
     <legend>Picto</legend>
     <ul> 
-        {% for stat in stats %}
+        {% for stat in stats|sortStats %}
         <li class="entry"> 
         <a href="/rank/{{stat.id}}" 
             {% if stat.id == select %}class="select"{% endif %}>
