@@ -21,12 +21,15 @@ function select(page, target){
 }
 
 function sortStats(stats){
-    if(!util.isArray(stats)) return stats
-    stats.sort(function(a, b){
+    var out = []
+    for(x in stats){
+        out.push(stats[x])
+    }
+    out.sort(function(a, b){
         if(a.rare == b.rare) return (a.name < b.name)?-1:1
         return (a.rare < b.rare)?1:-1
     })
-    return stats
+    return out
 }
 
 this.extend = function extend(swig){

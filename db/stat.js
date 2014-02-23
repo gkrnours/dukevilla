@@ -15,9 +15,9 @@ var self = this
 this.read = function read(id, cb){
     if(id == null) { 
         c.r.smembers('stat', function(err, res){
-            async.reduce(res, [], function(data, id, next){
+            async.reduce(res, {}, function(data, id, next){
                 self.read(id, function(err, res){ 
-                    data.push(res)
+                    data[id] = res
                     next(err, data)
                 })
             }, cb)
