@@ -48,7 +48,6 @@ this.erase = function erase(what, cb){
         // clean the db of all stat
         c.r.smembers('stat', function(err, res){
             if(err) return cb(err)
-            res.push('stat')
             c.r.del(res, cb)
         })
     }
