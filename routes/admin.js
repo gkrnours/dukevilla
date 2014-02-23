@@ -16,6 +16,12 @@ stat = {
         })
     }
 }
+rank = {
+    clean: function(req, res, next){
+        db.rank.erase(null, function(err){
+        })
+    }
+}
 function form(req, res){
 	res.redirect('/submit')
 }
@@ -23,5 +29,6 @@ function form(req, res){
 this.handle = function setup(app){
 	app.get('/adm', panel)
 	app.post('/adm/stat/clean', stat.clean)
+	app.post('/adm/rank/clean', stat.clean)
 }
 

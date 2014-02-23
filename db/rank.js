@@ -44,6 +44,12 @@ this.write = function write(what, cb){
 	})
 }
 this.erase = function erase(what, cb){
-// TODO
-//	return c.d.remove(id, rev, cb)
+    stat.read('list', function(err, stats){  
+        async.map(stats, function(stat, done){
+            done(null, 'rank:'+stat)
+        }, function(err, keys){
+            console.log(keys)
+            c.r.del(keys, cb)
+        })
+    })
 }

@@ -9,10 +9,13 @@
 <div class="part">
     <fieldset id="list" class="list">
         <legend>Admin</legend>
-        <h3><img src="/img/arma.gif" class="picto rare"> Destroy!</h3>
-        <hr>
+        <h3><img src="/img/arma.gif" class="picto rare"> 
+            Destroy! (delete data)</h3>
         <form action="/adm/stat/clean" method="post">
-            <input type="submit" value="clear stats" class="big">
+            <input type="submit" value="Clear all data about stats" class="big">
+        </form>
+        <form action="/adm/rank/clean" method="post">
+            <input type="submit" value="Reset every ranking" class="big">
         </form>
     </fieldset>
 </div>

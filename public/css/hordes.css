@@ -304,3 +304,30 @@ h2 {
   background-color: #996739;
   overflow: hidden;
 }
+
+input[type=submit].big, input[type=button].big {
+  display: block;
+  width: 425px;
+  margin: 25px auto 10px;
+  padding: 10px;
+  background: #520000;
+  color: #efd78e;
+  border: 3px solid #8b0505;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: black 6px 6px;
+}
+input[type=submit].big:hover, input[type=button].big:hover {
+  position: relative;
+  top: 2px;
+  left: 2px;
+  box-shadow: black 4px 4px;
+}
+input[type=submit].big:active, input[type=submit].big:focus, input[type=button].big:active, input[type=button].big:focus {
+  position: relative;
+  top: 6px;
+  left: 6px;
+  box-shadow: none;
+  outline: none;
+}
