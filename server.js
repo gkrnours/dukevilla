@@ -16,8 +16,7 @@ var app = express();
 app.engine('html', swig.renderFile)
 app.set('views', __dirname + '/views')
 app.set('view engine', 'html')
-app.set('view cache', false)
-swig.setDefaults({cache: false})
+app.set('view cache', 'memory')
 filter.extend(swig)
 app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8080)
 app.set('host', process.env.OPENSHIFT_NODEJS_IP || null)
@@ -28,10 +27,15 @@ app.use(express.urlencoded())
 app.use(express.cookieParser('langsoc is watching'))
 app.use(express.session())
 app.use(app.router)
-app.use(express.static(path.join(__dirname, 'public')));
-
+// production only
+if('development' != app.get('env')){
+    week = 1000*60*60*24*7
+    app.use(express.static(path.join(__dirname, 'public'), {maxAge: week}));
+}
 // development only
 if ('development' == app.get('env')) {
+  app.use(express.static(path.join(__dirname, 'public')));
+  swig.setDefaults({cache: false})
   app.use(express.errorHandler());
 }
 

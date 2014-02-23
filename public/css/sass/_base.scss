@@ -11,5 +11,5 @@ $break-large: 986px;
 @import "responsive";
 
 // Sticky
-@include sticky-footer(34px, "#body", "#main", "#foot");
+@include sticky-footer(36px, "#body", "#main", "#foot");
 // end sticky
