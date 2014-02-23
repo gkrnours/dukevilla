@@ -3,12 +3,14 @@
  * Module dependencies.
  */
 
-var express = require('express');
-var swig    = require('swig');
-var http    = require('http');
-var path    = require('path');
-var routes  = require('./routes/index.js');
-var filter  = require('./views/filter.js');
+var express = require('express')
+var rStore  = require('connect-redis')(express)
+var swig    = require('swig')
+var http    = require('http')
+var path    = require('path')
+var routes  = require('./routes/index.js')
+var filter  = require('./views/filter.js')
+var c       = require('./db/client.js')
 
 var app = express();
 
@@ -25,7 +27,7 @@ app.use(express.logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded())
 app.use(express.cookieParser('langsoc is watching'))
-app.use(express.session())
+app.use(express.session({store: new rStore({client: c.r}), secret: 'kitty'}))
 app.use(app.router)
 // production only
 if('development' != app.get('env')){
