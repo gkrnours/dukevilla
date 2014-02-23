@@ -3,16 +3,17 @@ var db_stat = require("../db/stat.js")
 
 function list(req, res){
     db_stat.read(null, function(err, lstat){
-        tpl_val = req.session
+        var tpl_val = Object.create(req.session)
         tpl_val.stats = lstat
         tpl_val.page  = 'rank'
+        console.log(tpl_val)
         res.render('rank', tpl_val)
     })
 }
 function rank(req, res){
     db_stat.read(null, function(err, lstat){
         db_rank.read(req.params.stat, function(err, lrank){
-            tpl_val = req.session
+            var tpl_val = Object.create(req.session)
             tpl_val.stats = lstat
             tpl_val.rank  = lrank
             tpl_val.page  = 'rank'
