@@ -52,3 +52,8 @@ this.erase = function erase(what, cb){
         })
     }
 }
+this.unlist = function unlist(what, cb){
+    if(what == null){
+        c.r.del('stat', cb)
+    }
+}

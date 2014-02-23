@@ -14,6 +14,12 @@ stat = {
             if(err) return next(err)
             res.redirect("/adm")
         })
+    },
+    unlist: function(req, res, next){
+        db.stat.unlist(null, function(err){
+            if(err) return next(err)
+            res.redirect("/adm")
+        })
     }
 }
 rank = {
@@ -30,6 +36,7 @@ function form(req, res){
 this.handle = function setup(app){
 	app.get('/adm', panel)
 	app.post('/adm/stat/clean', stat.clean)
+	app.post('/adm/stat/unlist',stat.unlist)
 	app.post('/adm/rank/clean', rank.clean)
 }
 
