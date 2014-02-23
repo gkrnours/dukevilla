@@ -9,7 +9,7 @@ function picto(stat){
 }
 picto.safe=true
 
-ADMIN = [3607225]
+ADMIN = [3607225, 558368]
 function admin(user){
     return ADMIN.indexOf(user.id) !== -1
 }
