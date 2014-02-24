@@ -262,7 +262,6 @@ h2 {
   float: left;
   width: 200px;
   margin-right: 5px;
-  overflow: hidden;
 }
 #main ul li.entry a {
   display: block;
@@ -271,6 +270,7 @@ h2 {
   border: 1px solid transparent;
   border-left: none;
   border-right: none;
+  overflow: hidden;
 }
 #main ul li.entry a:hover {
   border-color: #efd78e;
