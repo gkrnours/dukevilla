@@ -6,18 +6,22 @@
             list-style-type: none;
             &.entry{
                 float: left;
-                width: 200px;
-                margin-right: 5px;
+                width: 200px; height: 32px;
+                margin-top: 10px;
                 a {
                     display: block;
-                    padding: 2px 5px;
+                    width: 150px; height: 32px;
+                    padding: 2px 5px 2px 38px;
+                    text-indent: -36px;
                     text-decoration: none;
                     border: 1px solid transparent;
                     border-left: none; border-right: none;
                     overflow: hidden;
                     &:hover {
+                        position: absolute;
                         border-color: $light;
                         background: $dark;
+                        height: auto;
                     }
                     &.select {
                         border-color: #afacc1;
