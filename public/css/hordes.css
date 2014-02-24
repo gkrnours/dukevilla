@@ -258,7 +258,13 @@ h2 {
   margin: 4px 0;
   list-style-type: none;
 }
-#main ul li a {
+#main ul li.entry {
+  float: left;
+  width: 200px;
+  margin-right: 5px;
+  overflow: hidden;
+}
+#main ul li.entry a {
   display: block;
   padding: 2px 5px;
   text-decoration: none;
@@ -266,11 +272,11 @@ h2 {
   border-left: none;
   border-right: none;
 }
-#main ul li a:hover {
+#main ul li.entry a:hover {
   border-color: #efd78e;
   background: #663c2d;
 }
-#main ul li a.select {
+#main ul li.entry a.select {
   border-color: #afacc1;
   background-color: #696486;
 }

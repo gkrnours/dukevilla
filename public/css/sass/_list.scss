@@ -4,19 +4,25 @@
         li {
             margin: 4px 0;
             list-style-type: none;
-            a {
-                display: block;
-                padding: 2px 5px;
-                text-decoration: none;
-                border: 1px solid transparent;
-                border-left: none; border-right: none;
-                &:hover {
-                    border-color: $light;
-                    background: $dark;
-                }
-                &.select {
-                    border-color: #afacc1;
-                    background-color: #696486;
+            &.entry{
+                float: left;
+                width: 200px;
+                margin-right: 5px;
+                overflow: hidden;
+                a {
+                    display: block;
+                    padding: 2px 5px;
+                    text-decoration: none;
+                    border: 1px solid transparent;
+                    border-left: none; border-right: none;
+                    &:hover {
+                        border-color: $light;
+                        background: $dark;
+                    }
+                    &.select {
+                        border-color: #afacc1;
+                        background-color: #696486;
+                    }
                 }
             }
         }
