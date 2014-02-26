@@ -1,6 +1,6 @@
-<fieldset id="list" class="list">
-    <legend>Statistics</legend>
-    <ul> 
+<h2>Statistics</h2>
+<section id="list" class="list">
+    <ul class=""> 
         {% for stat in stats|sortStats %}
         <li class="entry"> 
         <a href="/rank/{{stat.id}}" 
@@ -8,4 +8,4 @@
             {{stat|toPicto}} {{stat.name}}</a>
         {% endfor %}
     </ul>
-</fieldset>
+</section>

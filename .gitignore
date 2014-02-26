@@ -12,5 +12,6 @@ logs
 results
 
 .sass-cache
+.nogit
 
 npm-debug.log

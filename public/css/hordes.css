@@ -141,19 +141,26 @@ body {
   margin-left: 20px;
   margin-bottom: 20px;
 }
-#main .part fieldset {
+#main .part h2 {
+  position: relative;
+  width: 212px;
+  margin: 0 auto -8px;
+  color: black;
+  font-size: 14px;
+  font-variant: small-caps;
+  font-family: sans-serif;
+  text-align: center;
+  background: url("/img/header.png") center no-repeat;
+  z-index: 100;
+}
+#main .part section {
+  position: relative;
+  z-index: 10;
   border: 2px inset #efd78e;
   border-radius: 10px;
   background-color: #421414;
   padding-bottom: 10px;
-}
-#main .part fieldset legend {
-  width: 212px;
-  border: none;
-  color: black;
-  font-variant: small-caps;
-  text-align: center;
-  background: url("/img/header.png") center no-repeat;
+  overflow: hidden;
 }
 
 #foot {
@@ -251,15 +258,19 @@ h2 {
 }
 
 #main ul {
-  margin: 5px 0;
-  padding: 0 15px;
+  margin: 0 0 -10px;
+  padding: 5px 15px;
+}
+#main ul.short {
+  max-height: 380px;
+  overflow: auto;
 }
 #main ul li {
   margin: 4px 0;
   list-style-type: none;
 }
 #main ul li.entry {
-  float: left;
+  display: inline-block;
   width: 200px;
   height: 32px;
   margin-top: 10px;
@@ -277,7 +288,6 @@ h2 {
   overflow: hidden;
 }
 #main ul li.entry a:hover {
-  position: absolute;
   border-color: #efd78e;
   background: #663c2d;
   height: auto;

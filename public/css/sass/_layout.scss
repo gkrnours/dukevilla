@@ -60,18 +60,24 @@ body {
         float: left;
         width: 450px;
         margin-left: 20px; margin-bottom: 20px;
-        fieldset {
+        h2 {
+            position: relative;
+            width: 212px;
+            margin: 0 auto -8px;
+            color: black;
+            font-size: 14px; font-variant: small-caps; font-family: sans-serif;
+            text-align: center;
+            background: url('/img/header.png') center no-repeat;
+            z-index: 100;
+        }
+        section {
+            position: relative;
+            z-index: 10;
             border: 2px inset $light;
             border-radius: 10px;
             background-color: $darker;
             padding-bottom: 10px;
-            legend {
-                width: 212px;
-                border: none;
-                color: black;
-                font-variant: small-caps; text-align: center;
-                background: url('/img/header.png') center no-repeat;
-            }
+            overflow: hidden;
         }
     }
 }

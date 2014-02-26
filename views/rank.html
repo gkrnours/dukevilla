@@ -12,14 +12,14 @@
 
 <div class="part">
     {% if select != "" %}
-    <fieldset id="list" class="list">
-        <legend>Ranking</legend>
+    <h2>Ranking</h2>
+    <section id="list" class="list">
         <h3>{{stat|toPicto}} {{stat.name}}</h3>
         <!-- {{stat|json}} -->
         {% if stat.social == true %}<h4>[social]</h4>{% endif %}
         <p>{{stat.description}}</p>
         {% include "list_player.html" with list %}
-    </fieldset>
+    </section>
     {% endif %}
 </div>
 {% endblock main %}

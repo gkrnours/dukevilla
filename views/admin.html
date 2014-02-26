@@ -7,8 +7,8 @@
 
 {% block main %}
 <div class="part">
-    <fieldset id="list" class="list">
-        <legend>Admin</legend>
+    <h2>Admin</h2>
+    <section id="list" class="list">
         <h3><img src="/img/arma.gif" class="picto rare"> 
             Destroy! (delete data)</h3>
         <form action="/adm/stat/clean" method="post">
@@ -21,6 +21,6 @@
             <input type="submit" value="Clear stats list (dangerous)" 
                 class="big">
         </form>
-    </fieldset>
+    </section>
 </div>
 {% endblock main %}
