@@ -8,7 +8,7 @@ function panel(req, res){
         res.render('admin', { stats: lstat, pseudo: " " })
     })
 }
-stat = {
+aStat = {
     clean: function(req, res, next){
         db.stat.erase(null, function(err){
             if(err) return next(err)
@@ -22,7 +22,7 @@ stat = {
         })
     }
 }
-rank = {
+aRank = {
     clean: function(req, res, next){
         db.rank.erase(null, function(err){
             res.redirect("/adm")
@@ -35,8 +35,8 @@ function form(req, res){
 
 this.handle = function setup(app){
 	app.get('/adm', panel)
-	app.post('/adm/stat/clean', stat.clean)
-	app.post('/adm/stat/unlist',stat.unlist)
-	app.post('/adm/rank/clean', rank.clean)
+	app.post('/adm/stat/clean', aStat.clean)
+	app.post('/adm/stat/unlist',aStat.unlist)
+	app.post('/adm/rank/clean', aRank.clean)
 }
 

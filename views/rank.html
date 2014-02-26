@@ -2,6 +2,8 @@
 {% extends "template.html" %}
 
 {% block head %}
+    <script src="/js/zepto.min.js"></script>
+    <script src="/js/rank.loader.js"></script>
 <!--<meta http-equiv="refresh" content="60" />-->
 {% endblock head%}
 
@@ -13,9 +15,8 @@
 <div class="part">
     {% if select != "" %}
     <h2>Ranking</h2>
-    <section id="list" class="list">
+    <section id="rank" class="list">
         <h3>{{stat|toPicto}} {{stat.name}}</h3>
-        <!-- {{stat|json}} -->
         {% if stat.social == true %}<h4>[social]</h4>{% endif %}
         <p>{{stat.description}}</p>
         {% include "list_player.html" with list %}

@@ -6,7 +6,8 @@ function list(req, res){
         var tpl_val = Object.create(req.session)
         tpl_val.stats = lstat
         tpl_val.page  = 'rank'
-        res.render('rank', tpl_val)
+        target = "rank."+req.accepts('html', 'json')
+        res.render(target, tpl_val)
     })
 }
 function rank(req, res){
@@ -18,7 +19,8 @@ function rank(req, res){
             tpl_val.page  = 'rank'
             tpl_val.stat  = lstat[req.params.stat]
             tpl_val.select= req.params.stat
-            res.render('rank', tpl_val)
+            target = "rank."+req.accepts('html', 'json')
+            res.render(target, tpl_val)
         })
     })
 }

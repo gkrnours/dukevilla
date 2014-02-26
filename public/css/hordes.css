@@ -286,11 +286,13 @@ h2 {
   border-left: none;
   border-right: none;
   overflow: hidden;
+  z-index: 10;
 }
 #main ul li.entry a:hover {
   border-color: #efd78e;
   background: #663c2d;
   height: auto;
+  z-index: 100;
 }
 #main ul li.entry a.select {
   border-color: #afacc1;

@@ -1,6 +1,7 @@
 var util = require('util')
 
 function picto(stat){
+    console.log(stat)
     if(typeof(stat) != 'object') return ""
     if(typeof(stat.icon) == 'undefined') return ""
     if(typeof(stat.rare) == 'undefined') return ""

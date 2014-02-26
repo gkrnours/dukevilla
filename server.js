@@ -16,6 +16,7 @@ var app = express();
 
 // all environments
 app.engine('html', swig.renderFile)
+app.engine('json', swig.renderFile)
 app.set('views', __dirname + '/views')
 app.set('view engine', 'html')
 app.set('view cache', 'memory')

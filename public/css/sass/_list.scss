@@ -21,10 +21,12 @@
                     border: 1px solid transparent;
                     border-left: none; border-right: none;
                     overflow: hidden;
+                    z-index: 10;
                     &:hover {
                         border-color: $light;
                         background: $dark;
                         height: auto;
+                        z-index: 100;
                     }
                     &.select {
                         border-color: #afacc1;
