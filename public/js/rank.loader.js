@@ -22,6 +22,8 @@ function mkDom(stat, rank, where){
         $(sect).attr('id', "rank").addClass("list")
         $(sect).append(title).append(desc).append(list)
     
+    $(".entry .select").removeClass("select")
+    $("#"+stat.id).addClass("select")
     $(where).empty()
     $(where).append(h2).append(sect)
 }

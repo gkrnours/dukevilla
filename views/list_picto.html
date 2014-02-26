@@ -3,7 +3,7 @@
     <ul id="stats"> 
         {% for stat in stats|sortStats %}
         <li class="entry"> 
-        <a href="/rank/{{stat.id}}" 
+        <a href="/rank/{{stat.id}}" id="{{stat.id}}" 
             {% if stat.id == select %}class="select"{% endif %}>
             {{stat|toPicto}} {{stat.name}}</a>
         {% endfor %}
