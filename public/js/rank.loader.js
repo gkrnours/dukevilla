@@ -5,7 +5,7 @@ function mkDom(stat, rank, where){
 
     picto = document.createElement('img')
         $(picto).attr('src', stat.icon).attr('alt', stat.name)
-        $(picto).addClass("picto rare")
+        $(picto).addClass("picto").addClass((0 < stat.rare)?"rare":"")
     title = document.createElement('h3')
         $(title).append(picto).append(" "+stat.name)
     desc = document.createElement('p')
@@ -20,7 +20,8 @@ function mkDom(stat, rank, where){
         })
     sect = document.createElement('section')
         $(sect).attr('id', "rank").addClass("list")
-        $(sect).append(title).append(desc).append(list)
+        $(sect).append(title)
+        $(sect).append(desc).append(list)
     
     $(".entry .select").removeClass("select")
     $("#"+stat.id).addClass("select")

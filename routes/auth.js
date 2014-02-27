@@ -27,6 +27,7 @@ function parse(req, res, next){
 }
 
 this.handle = function setup(app){
+    app.post('/', function(req,res){ res.redirect("/") })
 	app.get('/login', auth.go)
 	app.get('/back',   auth.back, parse, 
             function(req,res){ res.redirect("/rank") })
