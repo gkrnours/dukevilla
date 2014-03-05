@@ -1,6 +1,7 @@
 var util  = require("util")
 var async = require("async")
-var c = require("./client.js")
+var c     = require("./client.js")
+var stat = require("./stat.js")
 var self = this
 
 /** Achievement
@@ -16,65 +17,77 @@ var self = this
 var members = ["type","data","name","points","stat","score"]
 
 this.read = function read(id, cb){
-	if(id == null) return cb(new SyntaxError("id cannot be null"))
-	// hoard everything from everywhere
-	if(id.site == "*"){
-		//TODO get all site, for each grab each achievement
-		return
-	}
-	// hoard everything from a single site
-	if(id.achievement == "*"){
-		console.log("hoarding")
-		c.r.smembers("site:"+id.site+":achievements", function(err, result){
-			if(err) return cb(err)
-			async.concat(result, function(achiv, next){
-				self.read({site:id.site, achievement:achiv}, next)
-			}, cb)
-		})
-		return
-	}
-	// grab a specific achievement
-	c.r.hgetall("site:"+id.site+":"+id.achievement, cb)
+	//if(id == null) return cb(new SyntaxError("id cannot be null"))
+    switch(id){
+        case '*': // hoard everything
+            stat.read('list', function(err, stats){
+                if(err) return cb(err)
+                async.reduce(stats, {}, function(data, stat, next){
+                    self.read(stat, function(err, res){
+                        data[stat] = res
+                        next(err, data)
+                    })
+                }, cb)
+            })
+            break
+        default:
+            // grab achievements for a stat
+            c.r.get('achievements:'+id, function(err, nber){
+                if(!nber) return cb(err)
+                t = []
+                for(i=0; i<nber; i++){ t.push(i) }
+                async.map(t, function(idx, next){
+                    c.r.hgetall('achievement:'+id+':'+idx, next)
+                }, cb)
+            })
+	} // end switch
 }
 this.write = function write(what, cb){
 	// batch processing
 	if(util.isArray(what)) return async.concat(what, self.write, cb)
 	// error management
-	if(!what || !what.id || !what.site) 
-		return cb(new SyntaxError("id and site are required"))
+	if(!what || !what.stat || !what.idx) 
+		return cb(new SyntaxError("stat and idx are required"))
 	// caching if the achievements is already known
-	c.r.sismember("site:"+what.site+":achievements", what.id, function(err, res){
+	c.r.hgetall('achievement:'+what.stat+':'+what.idx, function(err, res){
 		if(err) return cb(err)
+        KEYN = 'achievement:'+what.stat
+        KEY  = KEYN+':'+what.idx
+		// multi ensure atomicity of operation.
+		var request = c.r.multi()
+        if(res === null) {
+            c.r.get(KEYN, function(err, res){
+                if(res != null && res < what.idx)
+                request.set(KEYN, what.idx)
+            })
+            request.hmset(KEY, what)
+        } else if(what.date < res.date ) {
+            request.hmset(KEY, 'date', what.date, 'user', what.user)
+        }
 		//TODO check if cache invalidation is optimal
-		if(res === 1 && (Math.floor(Math.random()*0xFF) <= 0x02) ){
-			return (cb)?cb(null, true):null
-		}
-		// adding data
-		payload = {}
-		members.forEach(function(item){
-			if(what[item]) payload[item] = what[item]
-		})
-		// mutli ensure atomicity of operation.
-		c.r.multi()
-			.sadd("site:"+what.site+":achievements", what.id)
-			.hmset("site:"+what.site+":"+what.id, payload)
-			.exec(cb)
+		//if(res === 1 && (Math.floor(Math.random()*0xFF) <= 0x02) ){
+		//	return (cb)?cb(null, true):null
+		//}
+
+		//	.hmset("site:"+what.site+":"+what.id, payload)
+        request.exec(cb)
 	})
 }
 this.erase = function erase(what, cb){
 //	return c.d.remove(id, rev, cb)
 }
 
-this.process = function process(sid, raw, cb){
+this.process = function process(user, raw, cb){
 	if(raw.data.type == "default") return
-	achiv = {	id: raw.id, site: sid, name: raw.name, 
-		stat:raw.stat, score: raw.score, points: raw.points }
+	achiv = { idx:raw.index, name:raw.name, 
+		      stat:raw.stat, score:raw.score,   desc:raw.description, 
+              date:raw.date, points:raw.points, user:user }
 	if(raw.data.type == "image" || raw.data.type == "icon"){
 		achiv.type = raw.data.type
 		achiv.data = raw.data.url
 	}
 	if(raw.data.type == "title") {
-		achiv.type = (raw.data.suffix)?"suffix":(raw.data.prefix)?"prefix":"title"
+		achiv.type = raw.data.suffix?"suffix":raw.data.prefix?"prefix":"title"
 		achiv.data = raw.data.title
 	}
 	self.write(achiv, cb)

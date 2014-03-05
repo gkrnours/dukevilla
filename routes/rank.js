@@ -1,8 +1,8 @@
-var db_rank = require("../db/rank.js")
-var db_stat = require("../db/stat.js")
+var db = require("../db")
+console.log(db)
 
 function list(req, res){
-    db_stat.read(null, function(err, lstat){
+    db.stat.read(null, function(err, lstat){
         var tpl_val = Object.create(req.session)
         tpl_val.stats = lstat
         tpl_val.page  = 'rank'
@@ -11,8 +11,8 @@ function list(req, res){
     })
 }
 function rank(req, res){
-    db_stat.read(null, function(err, lstat){
-        db_rank.read(req.params.stat, function(err, lrank){
+    db.stat.read(null, function(err, lstat){
+        db.rank.read(req.params.stat, function(err, lrank){
             var tpl_val = Object.create(req.session)
             tpl_val.stats = lstat
             tpl_val.list  = lrank
@@ -25,8 +25,8 @@ function rank(req, res){
     })
 }
 function total(req, res){
-    db_stat.read(null, function(err, lstat){
-        db_rank.read(null, function(err, lrank){
+    db.stat.read(null, function(err, lstat){
+        db.rank.read(null, function(err, lrank){
             res.render('rank', { rank: lrank, stats: lstat, pseudo: " " })
         })
     })
