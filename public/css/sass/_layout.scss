@@ -30,6 +30,15 @@ body {
     display: block;
     height: 100px;
     background: $darker;
+    h1 {
+        display: inline-block;
+        height: 100px; margin: 0px;
+        font-size: 64px;
+        font-family: Bevan, fantasy;
+        vertical-align: top;
+        color: $light;
+        text-shadow: 6px 6px 0px $red_d;
+    }
 }
 
 #local {

@@ -10,6 +10,8 @@ $break-large: 986px;
 
 @import "responsive";
 
+// fonts ? Zantroke, Trump Town Pro, Tertre, Bevan
+
 // Sticky
 @include sticky-footer(36px, "#body", "#main", "#foot");
 // end sticky

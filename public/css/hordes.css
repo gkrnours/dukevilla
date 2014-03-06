@@ -101,6 +101,16 @@ body {
   height: 100px;
   background: #421414;
 }
+#bann h1 {
+  display: inline-block;
+  height: 100px;
+  margin: 0px;
+  font-size: 64px;
+  font-family: Bevan, fantasy;
+  vertical-align: top;
+  color: #efd78e;
+  text-shadow: 6px 6px 0px #520000;
+}
 
 #local {
   position: absolute;
