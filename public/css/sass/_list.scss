@@ -5,6 +5,9 @@
             overflow: auto;
         }
         margin: 0 0 -10px; padding: 5px 15px;
+        &.extra li{
+            margin-bottom: 12px;
+        }
         li {
             margin: 4px 0;
             list-style-type: none;
@@ -41,8 +44,11 @@
         margin: 10px;
         dt, dd {
             margin-bottom: 1px;
-            color: #e3c699;
             border-bottom: 1px solid #b37c4a;
+            color: $lightes;
+            a {
+                color: $lightes;
+            }
         }
         dt {
             position: relative;
@@ -51,7 +57,6 @@
             padding-left: 25px;
             background-color: #b37c4a;
             border-radius: 10px 0 0 2px;
-            color: white;
             font-weight: bold;
             overflow: hidden;
         }

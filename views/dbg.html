@@ -1,0 +1,10 @@
+{# dbg #}
+{% extends "template.html" %}
+
+{% block main %}
+<div class="part">
+    <pre>
+    {{ dbg|json(4) }}
+    </pre>
+</div>	
+{% endblock main %}

@@ -25,15 +25,18 @@ cite {
 }
 
 h1,h2,h3,h4,h5,h6{
-    margin: 5px 10px 0;
+    margin: 8px 10px 4px;
+}
+h2{
+    font-size: 24px;
+    font-weight: 600;
 }
 h3{
     font-size: 20px;
     font-weight: 600;
 }
-h2{
-    font-size: 24px;
-    font-weight: 600;
+h4{
+    font-size: 18px;
 }
 
 .picto{
@@ -42,5 +45,18 @@ h2{
     background: url(/img/rewardBg_trash.gif);
     &.rare{
         background: url(/img/rewardBg_rare.gif);
+    }
+}
+
+input[type=checkbox]{
+    display: none;
+    & + label{
+        margin-left: 32px;
+        padding-left: 16px;
+        background: url(/img/tickOff.gif) no-repeat center left;
+        cursor: pointer;
+    }
+    &:checked + label{
+        background: url(/img/tickOn.gif) no-repeat center left;
     }
 }

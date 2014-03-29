@@ -1,0 +1,66 @@
+{# dbg #}
+{% extends "template.html" %}
+
+{% block main %}
+<div class="part">
+    <h2>New User</h2>
+    <section>
+        <h3><img src="/img/user.gif" class="picto"> Tell me about you.</h3>
+        <hr class="spacer">
+        <form method="post">
+            <h4>Default are fine.</h4>
+            <p>You can always change your mind later and alter these setting.
+            <input type="hidden" name="preset" value="true">
+            <input type="submit" value="Youkaïdi!" class="big blue">
+        </form>
+        <hr class="spacer">
+        <form method="post">
+            <h4>Tweak the options.</h4>
+            <p>You can opt out of any setting right now. Simply uncheck any of
+            these and validate through the small button.</p>
+            <ul class="extra">
+                <li>
+            <input type="checkbox" id="ranking" name="ranking" checked>
+            <label for="ranking">Appear in ranking</label>
+                </li> <li>
+            <input type="checkbox" id="contact" name="contact" checked>
+            <label for="contact">Update my contacts</label>
+                </li> <li>
+            <input type="checkbox" id="offline" name="offline" checked>
+            <label for="offline">Keep track of me</label>
+                </li> <li>
+            <input type="submit">
+            <input type="reset">
+                </li>
+            </ul>
+        </form>
+    </section>
+</div>	
+
+<div class="part">
+    <h2>Help on Setting</h2>
+    <section>
+        <h3><img src="/img/book.gif" class="picto"> About these options.</h3>
+
+        <h4>Anonymity... is like a warm blanket.</h4>
+        <p>Duke's Villa is all about ranking people. But maybe you don't
+        want to be ranked. That's fine. Just opt out. We'll still do our 
+        best to keep track of your data. But you'll not appear on ranking 
+        anymore, until you change your mind.</p>
+
+        <h4>The more, the merrier.</h4>
+        <p>Do you think it would be better if all your friend were present
+        at the Duke's Villa with you ? Just ask. This option will update
+        all your twinoid contact data. They'll not appear in ranking until
+        they come by themselves. We'll just make sure they have all their
+        data when they join.</p>
+
+        <h4>Always on call.</h4>
+        <p>Duke's Villa can keep track of your progress even when you
+        forget to visit us. You're just one opt-in away from having a full
+        history of all your future distinction gains.</p>
+
+    </section>
+</div>	
+
+{% endblock main %}

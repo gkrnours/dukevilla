@@ -1,1 +1,7 @@
-{% autoescape false %}{"stat":{{stat|json}},"rank":{{list|json}}}{% endautoescape %}
+{% autoescape false %}{% spaceless %}
+{
+    "stat":{{stat|json}},
+    "rank":{{list|json}},
+    "user":{{users|json}}
+}
+{% endspaceless %}{% endautoescape %}

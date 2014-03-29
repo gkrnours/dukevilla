@@ -1,8 +1,5 @@
 var async   = require('async')
-var db = {}
-    db.achievement = require('../db/achievements.js')
-    db.rank = require('../db/rank.js')
-    db.stat = require('../db/stat.js')
+var db = require('../db')
 
 //var SITE = 6 // Hordes
 var SITE = 7 // Die2Nite
@@ -35,8 +32,8 @@ function parse_achiev(achievements, user){
 }
 function parse(req, res, next){ 
     data = req.json.sites[0]
-    parse_rank(data.stats, '@'+req.json.id+':'+req.json.name)
-    parse_achiev(data.achievements, '@'+req.json.id+':'+req.json.name)
+    parse_rank(data.stats, req.json.id)
+    parse_achiev(data.achievements, req.json.id)
     db.stat.write(data.stats, function(){})
 
     req.session.me = {name:req.json.name, id:req.json.id}
@@ -48,7 +45,7 @@ function redirect(path){ return function(req, res){ res.redirect(path) } }
 this.handle = function setup(app){
     app.post('/', redirect("/") )
 	app.get('/login', auth.go)
-	app.get('/back',   auth.back, parse, redirect("/rank") )
+	app.get('/back',   auth.back, parse, redirect("/user/join") )
     app.get('/logout', out)
 }
 

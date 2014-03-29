@@ -3,14 +3,18 @@ $b2: rgba(0,0,0,.2);
 $b4: rgba(0,0,0,.4);
 $b5: rgba(0,0,0,.5);
 $w2: rgba(255,255,255,.2);
-$light: #efd78e;
-$lightes: #DDAB76;
+$lightes: #efd78e;
+$light: #ddab76;
 $bann: #845423;
 $dark: #663C2D;
 $darkes: #572620;
 $darker: #421414;
 $red_l: #8b0505;
 $red_d: #520000;
+$blue_l: #4c618b;
+$blue_d: #293752;
+//$blue_l: #05328b;
+//$blue_d: #001b52;
 
 body {
     margin: 0px; padding: 0 20px;
@@ -85,6 +89,7 @@ body {
             border: 2px inset $light;
             border-radius: 10px;
             background-color: $darker;
+            padding-top: 8px;
             padding-bottom: 10px;
             overflow: hidden;
         }
@@ -92,7 +97,7 @@ body {
 }
 
 #foot{
-    height: 32px; width: 886px;
+    height: 36px; width: 886px;
     margin: auto; padding: 2px 10px 0px;
     border: 2px inset $light; border-bottom: none;
     border-radius: 10px 10px 0 0;

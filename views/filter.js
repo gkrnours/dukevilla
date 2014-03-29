@@ -1,4 +1,5 @@
-var util = require('util')
+var util  = require('util')
+var db    = require('../db')
 
 function picto(stat){
     if(typeof(stat) != 'object') return ""

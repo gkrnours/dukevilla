@@ -63,23 +63,23 @@ html, body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin-bottom: -36px;
+  margin-bottom: -40px;
 }
 #body #main {
-  height: 36px;
+  height: 40px;
 }
 
 #foot {
   clear: both;
   position: relative;
-  height: 36px;
+  height: 40px;
 }
 
 body {
   margin: 0px;
   padding: 0 20px;
   font: 14px sans-serif;
-  color: #efd78e;
+  color: #ddab76;
   overflow-y: scroll;
   background: #421414 url("/img/bg.gif") center repeat-y;
 }
@@ -108,7 +108,7 @@ body {
   font-size: 64px;
   font-family: Bevan, fantasy;
   vertical-align: top;
-  color: #efd78e;
+  color: #ddab76;
   text-shadow: 6px 6px 0px #520000;
 }
 
@@ -166,19 +166,20 @@ body {
 #main .part section {
   position: relative;
   z-index: 10;
-  border: 2px inset #efd78e;
+  border: 2px inset #ddab76;
   border-radius: 10px;
   background-color: #421414;
+  padding-top: 8px;
   padding-bottom: 10px;
   overflow: hidden;
 }
 
 #foot {
-  height: 32px;
+  height: 36px;
   width: 886px;
   margin: auto;
   padding: 2px 10px 0px;
-  border: 2px inset #efd78e;
+  border: 2px inset #ddab76;
   border-bottom: none;
   border-radius: 10px 10px 0 0;
   background-color: #421414;
@@ -186,7 +187,7 @@ body {
 }
 
 a:link, a:visited, a:hover, a:active {
-  color: #efd78e;
+  color: #ddab76;
 }
 
 img {
@@ -195,7 +196,7 @@ img {
 
 hr {
   width: 50%;
-  color: #efd78e;
+  color: #ddab76;
 }
 
 p {
@@ -207,12 +208,17 @@ cite {
   display: block;
   margin: 7px 15px 0px 7px;
   padding-left: 7px;
-  border-left: 1px dashed #ddab76;
-  color: #ddab76;
+  border-left: 1px dashed #efd78e;
+  color: #efd78e;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 5px 10px 0;
+  margin: 8px 10px 4px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
 }
 
 h3 {
@@ -220,9 +226,8 @@ h3 {
   font-weight: 600;
 }
 
-h2 {
-  font-size: 24px;
-  font-weight: 600;
+h4 {
+  font-size: 18px;
 }
 
 .picto {
@@ -232,6 +237,19 @@ h2 {
 }
 .picto.rare {
   background: url(/img/rewardBg_rare.gif);
+}
+
+input[type=checkbox] {
+  display: none;
+}
+input[type=checkbox] + label {
+  margin-left: 32px;
+  padding-left: 16px;
+  background: url(/img/tickOff.gif) no-repeat center left;
+  cursor: pointer;
+}
+input[type=checkbox]:checked + label {
+  background: url(/img/tickOn.gif) no-repeat center left;
 }
 
 #menu li {
@@ -254,6 +272,7 @@ h2 {
   background: #572620;
 }
 #menu .item a {
+  color: #efd78e;
   text-decoration: none;
   font-weight: bold;
 }
@@ -274,6 +293,9 @@ h2 {
 #main ul.short {
   max-height: 380px;
   overflow: auto;
+}
+#main ul.extra li {
+  margin-bottom: 12px;
 }
 #main ul li {
   margin: 4px 0;
@@ -299,7 +321,7 @@ h2 {
   z-index: 10;
 }
 #main ul li.entry a:hover {
-  border-color: #efd78e;
+  border-color: #ddab76;
   background: #663c2d;
   height: auto;
   z-index: 100;
@@ -314,8 +336,11 @@ h2 {
 }
 #main dl dt, #main dl dd {
   margin-bottom: 1px;
-  color: #e3c699;
   border-bottom: 1px solid #b37c4a;
+  color: #efd78e;
+}
+#main dl dt a, #main dl dd a {
+  color: #efd78e;
 }
 #main dl dt {
   position: relative;
@@ -326,7 +351,6 @@ h2 {
   padding-left: 25px;
   background-color: #b37c4a;
   border-radius: 10px 0 0 2px;
-  color: white;
   font-weight: bold;
   overflow: hidden;
 }
@@ -339,29 +363,50 @@ h2 {
   overflow: hidden;
 }
 
-input[type=submit].big, input[type=button].big {
-  display: block;
-  width: 425px;
-  margin: 25px auto 10px;
-  padding: 10px;
-  background: #520000;
-  color: #efd78e;
-  border: 3px solid #8b0505;
-  font-size: 20px;
-  font-weight: bold;
+input[type=submit], input[type=button], input[type="reset"] {
+  margin-right: 8px;
+  padding: 3px 10px;
   cursor: pointer;
+  font-weight: bold;
+  color: #efd78e;
+  background: #663c2d;
+  border: 3px solid #845423;
   box-shadow: black 6px 6px;
 }
-input[type=submit].big:hover, input[type=button].big:hover {
+input[type=submit]:hover, input[type=button]:hover, input[type="reset"]:hover {
   position: relative;
   top: 2px;
   left: 2px;
   box-shadow: black 4px 4px;
 }
-input[type=submit].big:active, input[type=submit].big:focus, input[type=button].big:active, input[type=button].big:focus {
+input[type=submit]:active, input[type=submit]:focus, input[type=button]:active, input[type=button]:focus, input[type="reset"]:active, input[type="reset"]:focus {
   position: relative;
   top: 6px;
   left: 6px;
   box-shadow: none;
   outline: none;
+}
+input[type=submit].big, input[type=button].big, input[type="reset"].big {
+  display: block;
+  width: 425px;
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 20px;
+}
+input[type=submit].red, input[type=button].red, input[type="reset"].red {
+  background: #520000;
+  border: 3px solid #8b0505;
+}
+input[type=submit].blue, input[type=button].blue, input[type="reset"].blue {
+  background: #293752;
+  border: 3px solid #4c618b;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid #ddab76;
+  margin: 5px auto;
+}
+hr.spacer {
+  margin: 20px auto;
 }

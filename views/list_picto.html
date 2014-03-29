@@ -1,6 +1,7 @@
 <h2>Statistics</h2>
 <section id="list" class="list">
     <ul id="stats"> 
+        <h3><img src="/img/book.gif" class="picto"> Choose your ladder...</h3>
         {% for stat in stats|sortStats %}
         <li class="entry"> 
         <a href="/rank/{{stat.id}}" id="{{stat.id}}" 
