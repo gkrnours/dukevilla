@@ -1,6 +1,6 @@
     <dl> 
         {% for p in list %}
         <dt class="entry">{{p.score}}</dt>
-        <dd><a href="/user/{{p.name}}">{{users[p.name].name}}</dd>
+        <dd><a href="/user/{{p.name}}">{{users[p.name].name}}</a></dd>
         {% endfor %}
     </dl>
