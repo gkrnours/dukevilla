@@ -8,5 +8,6 @@ this.setup = function setup(app){
 	modules.forEach(function(i){ i.handle(app) })
 }
 this.handle = function(app){
-	app.get('/', function(req, res){ res.render('index', req.session) })
+	app.get('/', function(req, res){ console.log(req.session)
+        res.render('index', req.session) })
 }

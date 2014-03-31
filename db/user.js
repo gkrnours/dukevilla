@@ -30,3 +30,13 @@ this.write = function write(who, cb){
 this.erase = function erase(what, cb){
     // TODO
 }
+
+this.setId = function setId(user, cb){
+	if(!user || !user.id || !user.hid) 
+		return cb(new SyntaxError("id and hid are required"))
+    c.r.set("user:hid:"+user.hid, user.id, cb)
+}
+this.getId = function getId(hid, cb){
+    c.r.get("user:hid:"+hid, cb)
+}
+
