@@ -11,7 +11,11 @@ function xml(req, res, next){
         rep.on('data', function(chunk){ data += chunk })
         rep.on('end', function(){
             x2js.parseString(data, function(err, soul){
-                user = soul.hordes.headers[0].owner[0].citizen[0].$
+                try{
+                    user = soul.hordes.headers[0].owner[0].citizen[0].$
+                } catch(e) {
+                    return res.redirect('/')
+                }
                 db.user.getId(user.id, function(err, id){
                     if(!req.session.me) req.session.me = {}
                     req.session.setup = !id
