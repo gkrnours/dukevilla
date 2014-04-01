@@ -52,8 +52,8 @@ function bkp(req, res){
 }
 
 this.handle = function setup(app){
-	app.post('/', bkp)
-	app.post('/xml', xml)
+//	app.post('/', bkp)
+	app.post('/', xml)
 	app.get ('/user/setup', ask_data)
 	app.post('/user/setup', get_data)
 	app.get ('/user/:id/name', name)
